@@ -19,6 +19,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.1</version>
+        <relativePath/>
     </parent>
 
     <properties>
@@ -46,7 +47,14 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Dev Tools (Optional but helpful) -->
+        <!-- Spring Boot Test (JUnit 5) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Dev Tools (optional) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>

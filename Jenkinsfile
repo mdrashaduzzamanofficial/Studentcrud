@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    tools {
+    /*tools {
         maven 'Maven'
         jdk 'Java21'
-    }
+    }*/
 
     stages {
         stage('Checkout') {
@@ -14,10 +14,13 @@ pipeline {
         }
 
         stage('Build') {
-            steps {
-                sh 'mvn clean package -DskipTests'
-            }
-        }
+                    steps {
+                        dir('secureapp') {
+                            sh 'chmod +x mvnw'
+                            sh './mvnw clean compile'
+                        }
+                    }
+                }
 
         stage('Docker Build') {
             steps {
@@ -41,3 +44,4 @@ pipeline {
         }
     }
 }
+
